@@ -8,7 +8,7 @@ class IndexView(generic.ListView):
   template_name = 'kurzy/seznam.html'
 
   def get_queryset(self):
-    return Kurzy.objects.order_by('nazev')
+    return Kurzy.objects.order_by('-akreditace_mpsv', 'nazev')
 
 class DetailView(generic.DetailView):
   model = Kurzy

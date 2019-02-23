@@ -74,6 +74,16 @@ img
   clear: both;
 }
 
+.akreditovany
+{
+  color: #800000;
+}
+
+.neakreditovany
+{
+  color: #000080;
+}
+
 #menu
 {
   float: left;
