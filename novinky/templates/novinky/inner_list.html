@@ -1,0 +1,11 @@
+{% if novinky_list %}
+  <ul>
+  {% for novinka in novinky_list %}
+    <li><h4>{{ novinka.titulek }}</h4>
+    <p>({{ novinka.autor.first_name }} {{ novinka.autor.last_name }}, {{ novinka.datum_zverejneni }})</p>
+    <p>{{novinka.text}}
+  {% endfor %}
+  </ul>
+{% else %}
+  <p>Žádné novinky neexistují.</p>
+{% endif %}

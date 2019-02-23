@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Medailonky členů{% endblock %}
+
+{% block content %}
+{% if clenove_list %}
+  {% for clen in clenove_list %}
+    <h3>{{ clen.display_name }} ({{ clen.full_name }})</h3>
+    {% if clen.foto %}<img src="{{ clen.foto.url }}" class="levy" width="250" alt="">{% endif %}
+    <dl>
+      <dt>Vztah k Patronce</dt>
+      <dd>{{ clen.patronci_vztah }}</dd>
+
+      {% if clen.motto %}
+      <dt>Motto</dt>
+      <dd>{{ clen.motto }}</dd>
+      {% endif %}
+
+      {% if clen.patronci_zajmy %}
+      <dt>Patrončí zájmy</dt>
+      <dd>
+        <ul>
+        {% for zajem in clen.patronci_zajmy %}
+        <li>{{ zajem }}
+        {% endfor %}
+        </ul>
+      {% endif %}
+
+      {% if clen.pracovni_zkusenosti %}
+      <dt>Pracovní zkušenosti</dt>
+      <dd>
+        <ul>
+        {% for zkusenost in clen.pracovni_zkusenosti %}
+        <li>{{ zkusenost }}
+        {% endfor %}
+        </ul>
+      </dd>
+      {% endif %}
+    </dl>
+    <hr class="invis">
+  {% endfor %}
+{% else %}
+  <p>Žádný člen nemá zveřejněný svůj medailonek.</p>
+{% endif %}
+{% endblock %}

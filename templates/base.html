@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{% static "styly.css" %}" />
+    <title>{% block title %}{% endblock %} &ndash; Patronka, z.s.</title>
+</head>
+
+<body>
+    <header>
+        <h1>Patronka, z.s.</h1>
+    </header>
+    <nav id="menu">
+        {% block sidemenu %}
+        <ul>
+            <li><a href="/">Úvodní stránka</a></li>
+            <li><a href="/o-nas">O spolku</a></li>
+            <li><a href="/clenove/">Medailonky členů</a></li>
+            <li><a href="/kurzy/">Kurzy</a></li>
+        </ul>
+        {% endblock %}
+    </nav>
+
+    <main id="content" role="main">
+    <article>
+        {% block content %}{% endblock %}
+    </article>
+    </main>
+
+    <footer>
+        Web spravuje Karry Hořeňovská, případné stížnosti přijímá na mailu
+        <a href="mailto:karry@karryanna.cz">karry@karryanna.cz</a>.
+    </footer>
+</body>
+</html>

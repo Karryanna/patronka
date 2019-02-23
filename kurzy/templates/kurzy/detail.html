@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}Kurz {{ kurz.nazev }}{% endblock %}
+
+{% block content %}
+<h2>Kurz {{ kurz.nazev }}</h2>
+<table>
+<tr>
+  <td>Akreditace MPSV</td>
+  <td>{% if kurz.akreditace_mpsv %}Ano{% else %}Ne{% endif %}</td>
+</tr>
+<tr>
+  <td>Počet hodin</td>
+  <td>{{ kurz.hodin }}</td>
+</tr>
+<tr>
+  <td>Místo konání</td>
+  <td>{{ kurz.misto }}</td>
+</tr>
+<tr>
+  <td>Cena</td>
+  <td>{{ kurz.cena|safe }}</td>
+</tr>
+<tr>
+  <td>Termín</td>
+  <td>{{ kurz.termin }}</td>
+</tr>
+<tr>
+  <td>Lektor</td>
+  <td>{{ kurz.lektor }}</td>
+</tr>
+<tr>
+  <td>Počet účastníků</td>
+  {% if kurz.min_ucastniku > 0 %}
+  <td>{{ kurz.min_ucastniku }} &ndash; {{ kurz.max_ucastniku }}</td>
+  {% else %}
+  <td>Dle domluvy</td>
+  {% endif %}
+</tr>
+<tr>
+  <td>Specifika účasti na kurzu</td>
+  <td>{{ kurz.specifika }}</td>
+</tr>
+<tr>
+  <td>Vhodný pro</td>
+  <td>
+    <ul>
+      {% for polozka in kurz.vhodny_pro %} <li>{{ polozka }} {% endfor %}
+    </ul>
+  </td>
+</tr>
+<tr>
+  <td>Efektivní opakování</td>
+  <td>{% if kurz.opakovani %}Ano{% else %}Ne{% endif %}</td>
+</tr>
+<tr>
+  <td>Anotace</td>
+  <td>{{ kurz.anotace|linebreaks }}</td>
+</tr>
+</table>
+
+<p><a href="{% url 'kurzy:index' %}">Zpět na přehled kurzů</a></p>
+{% endblock %}

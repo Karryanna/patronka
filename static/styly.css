@@ -1,0 +1,98 @@
+header
+{
+  text-align: center;
+}
+
+footer
+{
+  bottom: 0;
+  margin-top: 2em;
+  text-align: center;
+}
+
+table
+{
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+td
+{
+  border: 1px solid black;
+}
+
+table ul
+{
+  margin-top: 0em;
+  margin-bottom: 0em;
+  margin-left: -1em;
+}
+
+dl
+{
+  padding-left: 0.5em;
+  overflow: hidden;
+}
+
+ul
+{
+  margin-top: 0pt;
+  overflow: hidden;
+}
+
+dd
+{
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+dd ul
+{
+  margin-bottom: 0pt;
+  margin-left: -1em;
+  padding-left: 1.5em;
+}
+
+img
+{
+  margin: 1.5 em;
+}
+
+.levy
+{
+  float: left;
+}
+
+.pravy
+{
+  float: right;
+}
+
+.invis
+{
+  visibility: hidden;
+  clear: both;
+}
+
+#menu
+{
+  float: left;
+  width: 18%;
+  padding-top: 0pt;
+}
+
+#menu a
+{
+  color: black;
+}
+
+#menu ul
+{
+  margin-top: 0pt;
+}
+
+#content
+{
+  width: 76%;
+  margin-left: 20%;
+}

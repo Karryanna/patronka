@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Kurz {{ kurz.nazev }}{% endblock %}
+
+{% block content %}
+{% if novinky_list %}
+  <ul>
+  {% for novinka in novinky_list %}
+    <li><h3>{{ novinka.titulek }}</h3>
+    <p>({{ novinka.autor }}, {{ novinka.datum_zverejneni }})</p>
+    <p>{{novinka.text}}
+  {% endfor %}
+  </ul>
+{% else %}
+  <p>Žádné novinky neexistují.</p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block title %}Úvodní strana{% endblock %}
+
+{% block content %}
+<h2>Zapsaný spolek Patronka</h2>
+
+<h3>Nejnovější dění</h3>
+{% include "novinky/inner_list.html" %}
+{% endblock %}

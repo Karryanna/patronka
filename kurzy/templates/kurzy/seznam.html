@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Seznam kurzů{% endblock %}
+
+{% block content %}
+{% if kurzy_list %}
+  <ul>
+    {% for kurz in kurzy_list %}
+      <li><h3>{{ kurz.nazev }}{% if kurz.akreditace_mpsv %} (akreditováno MPSV){% endif %}</h3>
+      <p>{{ kurz.anotace|linebreaks }}</p>
+      <p><a href="{% url 'kurzy:detail' kurz.id %}">Podrobnosti kurzu</a></p>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>V současné době žádné kurzy nenabízíme.</p>
+{% endif %}
+{% endblock %}
