@@ -3,10 +3,13 @@
 {% block title %}Seznam kurzů{% endblock %}
 
 {% block content %}
+<p>Pro bližší informace ke kurzům kontaktujte Martinu Burešovou:
+<a href="mailto:martina@mojepatronka.cz">martina@mojepatronka.cz</a>, +420 724 091 915</p>
+
 {% if kurzy_list %}
   <ul>
     {% for kurz in kurzy_list %}
-      <li><h3>{{ kurz.nazev }}{% if kurz.akreditace_mpsv %} (akreditováno MPSV){% endif %}</h3>
+      <li><h3 class="{% if kurz.akreditace_mpsv %}akreditovany{% else %}neakreditovany{% endif %}">{{ kurz.nazev }}{% if kurz.akreditace_mpsv %} (akreditováno MPSV){% endif %}</h3>
       <p>{{ kurz.anotace|linebreaks }}</p>
       <p><a href="{% url 'kurzy:detail' kurz.id %}">Podrobnosti kurzu</a></p>
     {% endfor %}
